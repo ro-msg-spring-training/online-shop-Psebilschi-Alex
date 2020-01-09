@@ -12,14 +12,15 @@ import java.util.List;
 @Table(name = "order")
 public class Order extends BaseClass {
     @ManyToOne
-    @Column(name = "shippedFrom")
-    private Location shippedFrom;
+    @JoinColumn(name = "shipped_from")
+    private Location shipped_from;
 
     @ManyToOne
-    private Customer customer;
+    @JoinColumn(name = "customer_id")
+    private Customer customer_id;
 
-    @Column(name = "createAt")
-    private Timestamp createAt;
+    @Column(name = "create_at")
+    private Timestamp create_at;
 
     @Column(name = "country")
     private String country;
@@ -27,8 +28,8 @@ public class Order extends BaseClass {
     @Column(name = "city")
     private String city;
 
-    @Column(name = "streetAddress")
-    private String streetAddress;
+    @Column(name = "street_address")
+    private String street_address;
 
     @OneToMany(mappedBy = "order")
     private List<OrderDetail> orderDetailList = new ArrayList<OrderDetail>();

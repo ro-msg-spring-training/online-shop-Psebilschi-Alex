@@ -1,18 +1,14 @@
 package ro.msg.learning.shop.Domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 
 @MappedSuperclass
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
 public class BaseClass {
 
-    @Id
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Integer id;
 
 }

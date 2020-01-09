@@ -16,5 +16,6 @@ public class Revenue extends BaseClass {
     private Double sum;
 
     @ManyToOne
+    @JoinColumn(name = "location")
     private Location location;
 }

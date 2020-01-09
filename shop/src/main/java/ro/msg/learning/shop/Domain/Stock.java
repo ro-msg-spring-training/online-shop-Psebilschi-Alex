@@ -2,10 +2,7 @@ package ro.msg.learning.shop.Domain;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Data
@@ -15,8 +12,10 @@ public class Stock extends BaseClass {
     private Integer quantity;
 
     @ManyToOne
+    @JoinColumn(name = "location")
     private Location location;
 
     @ManyToOne
+    @JoinColumn(name = "product")
     private Product product;
 }

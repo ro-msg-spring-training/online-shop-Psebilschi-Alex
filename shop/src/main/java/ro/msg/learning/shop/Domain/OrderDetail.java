@@ -2,19 +2,18 @@ package ro.msg.learning.shop.Domain;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Data
-@Table(name = "orderDetail")
+@Table(name = "order_detail")
 public class OrderDetail extends BaseClass {
     @ManyToOne
+    @JoinColumn(name = "order")
     private Order order;
 
     @ManyToOne
+    @JoinColumn(name = "product")
     private Product product;
 
     @Column(name = "quantity")

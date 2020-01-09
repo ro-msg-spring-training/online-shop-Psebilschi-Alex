@@ -19,13 +19,13 @@ public class Location extends BaseClass {
     @Column(name = "city", length = 30)
     private String city;
 
-    @Column(name = "streetAddress", length = 30)
-    private String streetAddress;
+    @Column(name = "street_address", length = 30)
+    private String street_address;
 
     @OneToMany(mappedBy = "location")
     private List<Stock> stockList = new ArrayList<Stock>();
 
-    @OneToMany(mappedBy = "shippedFrom")
+    @OneToMany(mappedBy = "shipped_from")
     private List<Order> orderList = new ArrayList<Order>();
 
     @OneToMany(mappedBy = "location")

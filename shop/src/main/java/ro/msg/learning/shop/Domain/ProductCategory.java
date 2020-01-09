@@ -1,6 +1,6 @@
 package ro.msg.learning.shop.Domain;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -8,7 +8,9 @@ import java.util.List;
 
 @Entity
 @Data
-@Table( name = "productCategory")
+@Table(name = "productCategory")
+@Builder
+@NoArgsConstructor @AllArgsConstructor
 public class ProductCategory extends BaseClass {
     @Column(name = "name")
     private String name;
