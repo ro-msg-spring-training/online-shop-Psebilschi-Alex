@@ -1,11 +1,17 @@
 package ro.msg.learning.shop.Domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Entity
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "stock")
 public class Stock extends BaseClass {
     @Column(name = "quantity")

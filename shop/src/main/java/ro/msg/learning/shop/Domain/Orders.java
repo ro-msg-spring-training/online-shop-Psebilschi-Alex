@@ -1,6 +1,9 @@
 package ro.msg.learning.shop.Domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -9,8 +12,11 @@ import java.util.List;
 
 @Entity
 @Data
-@Table(name = "order")
-public class Order extends BaseClass {
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "orders")
+public class Orders extends BaseClass {
     @ManyToOne
     @JoinColumn(name = "shipped_from")
     private Location shipped_from;
@@ -31,6 +37,6 @@ public class Order extends BaseClass {
     @Column(name = "street_address")
     private String street_address;
 
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "orders")
     private List<OrderDetail> orderDetailList = new ArrayList<OrderDetail>();
 }

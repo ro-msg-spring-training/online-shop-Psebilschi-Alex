@@ -1,9 +1,6 @@
 package ro.msg.learning.shop.Domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -12,6 +9,7 @@ import java.util.List;
 @Entity
 @Data
 @Builder
+@ToString(exclude = {"stockList", "orderDetailList"})
 @NoArgsConstructor
 @AllArgsConstructor
 @Table( name = "product")

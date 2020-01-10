@@ -3,9 +3,6 @@ package ro.msg.learning.shop.Controller;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ro.msg.learning.shop.DTOs.ProductDTO;
-import ro.msg.learning.shop.Domain.ProductCategory;
-import ro.msg.learning.shop.Exceptions.ProductCategoryNotFoundException;
-import ro.msg.learning.shop.Repository.ProductCategoryRepo;
 import ro.msg.learning.shop.Service.ProductService;
 
 import java.util.List;
@@ -13,7 +10,6 @@ import java.util.List;
 @RestController
 @AllArgsConstructor
 public class ProductCategoryController {
-    private final ProductCategoryRepo repo;
     private final ProductService prodService;
 
     @GetMapping("/products/{id}")

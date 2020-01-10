@@ -1,6 +1,9 @@
 package ro.msg.learning.shop.Domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,6 +14,9 @@ import java.util.List;
 
 @Entity
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "customer")
 public class Customer extends BaseClass {
     @Column(name = "first_name", length = 30)
@@ -29,5 +35,5 @@ public class Customer extends BaseClass {
     private String email_address;
 
     @OneToMany(mappedBy = "customer_id")
-    private List<Order> orderList = new ArrayList<Order>();
+    private List<Orders> ordersList = new ArrayList<Orders>();
 }

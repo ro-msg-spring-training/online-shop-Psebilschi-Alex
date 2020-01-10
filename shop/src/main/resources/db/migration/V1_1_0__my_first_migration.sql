@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS stock (
     quantity int
 );
 
-CREATE TABLE IF NOT EXISTS `order` (
+CREATE TABLE IF NOT EXISTS `orders` (
     id int NOT NULL AUTO_INCREMENT PRIMARY KEY ,
     shipped_from int references location (id),
     customer_id int references  customer (id),
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `order` (
 
 CREATE TABLE IF NOT EXISTS order_detail (
     id int NOT NULL AUTO_INCREMENT PRIMARY KEY ,
-    `order` int references `order` (id),
+    `orders` int references `orders` (id),
     product int references  product (id),
     quantity int
 )
